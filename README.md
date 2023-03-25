@@ -1,1 +1,2 @@
 # DevRosinskiCoaching
+WHATS UP?
