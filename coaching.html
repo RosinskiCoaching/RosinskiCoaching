@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Habit Coaching</title>
+	<link rel="stylesheet" href="styles2.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans&display=swap" rel="stylesheet">
+	<script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
+	<script defer>
+		const observer = new IntersectionObserver((entries) => {
+			entries.foreEach((entry) => {
+				console.log(entry)
+				if (entry.isIntersecting) {
+					entry.target.classList.add('show');
+				} else {
+					entry.target.classList.remove('show');
+				}
+			});
+		});
+
+		const hiddenElements = document.querySelectorAll('.hidden');
+		hiddenElements.foreEach((el) => observer.observe(el));
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="start">
+			<h1 class="opener">Change your habits.<br><span id="typed"></span><br><span id="dude"></span></h1>
+		</div>
+		<div class="main">
+			<h1 class="header hidden">Essential Coaching</h1>
+		</div>
+		<div class="end">
+			<p class="closer">Eine Seite, noch unter bearbeitung. Aber eine Seite noch.</p>
+		</div>
+	</div>
+<script>
+    var typed = new Typed('#typed', {
+      strings: ['^1000Perform better.'],
+      typeSpeed: 100,
+    });
+    var dude = new Typed('#dude', {
+    	strings: ['^3500Improve your life.'],
+    	typeSpeed: 100
+    })
+  </script>
+</body>
+</html>

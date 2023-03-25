@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap')
+
+html
+	scroll-snap-type: y proximity
+
+.hidden
+	opacity: 0
+	transition: all .3s
+
+.show
+	opacity: 1
+	transform: translateY(5px)
+
+body
+	width: 100vw
+	height: 100vh
+	background-color: #fff
+	margin: 0
+	// scroll-snap-type: y mandatory
+
+.typed-cursor
+	color: #20dfde
+	visibility: hidden
+	opacity: 0
+
+.container
+	display: grid
+	grid-template-columns: 100vw
+	grid-template-rows: repeat(3, 100vh)
+	grid-template-areas: "opener" "header" "closer"
+	place-items: center
+	place-content: center
+
+sup
+	font-size: 1.5rem
+	letter-spacing: -5px
+
+.start
+	font-family: "Comfortaa", sans-serif
+	grid-area: opener
+	font-size: 1.5rem
+	line-height: 4rem
+
+.opener
+	// text-decoration: underline
+	// scroll-snap-align: center
+
+.main
+	grid-area: header
+	background-image: url('https://www.rosinskicoaching.de/website/assets/images/header.png')
+	background-size: cover
+	background-attachment: fixed
+	height: 100%
+	width: 100%
+	display: flex
+	place-items: center
+	place-content: center
+
+.header
+	// scroll-snap-align: center
+	font-size: 3rem
+	letter-spacing: 2px
+	font-family: "Open Sans", sans-serif
+	text-shadow: 0 0 15px #000
+	letter-spacing: 7px
+	color: #fff
+
+.end
+	grid-area: closer
+	padding: 8em
+	border: 3px solid #f0f
+	background-color: #000
+	border-radius: 4em
+	box-shadow: 10px 10px 15px #333a, -10px -10px 15px #333a
+
+.closer
+	// scroll-snap-align: center
+	letter-spacing: 2px
+	font-family: "Righteous", cursive
+	font-size: 2em
+	color: #fff
