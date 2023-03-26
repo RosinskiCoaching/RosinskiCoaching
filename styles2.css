@@ -189,4 +189,22 @@ hr {
   color: #fff;
 }
 
+.impressum {
+  background-color: #333;
+  display: flex;
+  justify-items: end;
+  justify-content: end;
+  align-items: end;
+  align-content: end;
+}
+.impressum .lastslide {
+  padding: 5px;
+  padding-right: 10px;
+}
+.impressum .link1 {
+  color: #aaa;
+  text-decoration: none;
+  font-family: "Open sans";
+}
+
 /*# sourceMappingURL=styles2.css.map */
