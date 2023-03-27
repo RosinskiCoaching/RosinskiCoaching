@@ -6,6 +6,16 @@
 //	opacity: 1
 //	transform: translateY(5px)
 
+$max: 1300px
+
+=responsive
+	@media screen and (max-width: $max)
+		@content
+
+=small
+	@media screen and (max-width: 500px)
+		@content
+
 body
 	width: 100vw
 	height: 100vh
@@ -20,14 +30,12 @@ body
 .container
 	display: grid
 	grid-template-columns: 100vw
-	grid-template-rows: 100vh 130vh 105vh 95vh 100vh
+	grid-template-rows: 100vh 130vh 105vh 95vh 110vh
 	grid-template-areas: "opener" "header" "closer" "footer" "end"
 	place-items: center
 	place-content: center
-
-sup
-	font-size: 1.5rem
-	letter-spacing: -5px
+	+responsive
+		grid-template-rows: 100vh 130vh 1fr 1fr 110vh
 
 .start
 	font-family: "Comfortaa", sans-serif
@@ -73,51 +81,79 @@ hr
 
 
 .end
-	grid-area: closer
+	box-shadow: 0 0 15px #000c
 	height: 100%
 	width: 100%
+
+	color: #000
 	background-image: url('./bg1.png')
+	background-position: center
 	background-size: cover
+	background-attachment: local
+	background-repeat: no-repeat
+
 	display: grid
-	grid-template-rows: repeat(2, 1fr)
-	grid-template-columns: repeat(2, 1fr)
+	grid-template-rows: repeat(2, 1fr) //40% 50%
+	grid-template-columns: repeat(2, 1fr) //40% 40%
 	grid-template-areas: "one two" "three four"
 	place-items: center
 	place-content: space-evenly
-	font-family: "Noto Sans"
-	grid-gap: 1em
-	color: #fff
-	box-shadow: 0 0 15px #000
+	grid-area: closer
+	+responsive
+		grid-template-rows: repeat(4, 1fr)
+		grid-template-columns: 1fr
+		grid-template-areas: "one" "two" "three" "four"
+		place-content: center
+	+small
+		background-image: linear-gradient(to top right, red, blue)
+
 	p
 		font-family: "Open Sans"
-		font-size: 1.5em
-		padding: 1em
-		background-color: #0005
-		backdrop-filter: blur(30px)
-		border-radius: 2em
+		padding: 1.5em
+		font-size: 1.3em
+		border-radius: 1em
+		background-color: #0000
+		backdrop-filter: brightness(150%) blur(50em)
+		-webkit-backdrop-filter: contrast(150%) blur(50em)
+		+responsive
+			color: #fff
+			backdrop-filter: brightness(50%) blur(5px)
+			-webkit-backdrop-filter: brightness(50%) blur(5px)
+			padding: .5em
+			padding-left: 1em
+			padding-right: 1em
+			margin: 1em
+			text-align: justify
 	h1
+		text-align: center
 		font-size: 3em
-		text-shadow: 0 0 10px #000d
+		font-family: "Noto Sans"
+		text-shadow: 0 0 15px #000c
+		color: #fff
 
-.sec1
-	grid-area: one
-	margin: 1em
-	width: 60%
+	.sec1
+		grid-area: one
+		width: 60%
+		+responsive
+			width: 100%
 
-.sec2
-	grid-area: two
-	margin: 1em
-	width: 60%
+	.sec2
+		grid-area: two
+		width: 60%
+		+responsive
+			width: 100%
 
-.sec3
-	grid-area: three
-	margin: 1em
-	width: 60%
+	.sec3
+		grid-area: three
+		width: 60%
+		+responsive
+			width: 100%
 
-.sec4
-	grid-area: four
-	margin: 1em
-	width: 60%
+	.sec4
+		grid-area: four
+		width: 60%
+		+responsive
+			width: 100%
 
 .footer
 	display: grid
@@ -125,40 +161,49 @@ hr
 	grid-template-rows: 1fr
 	grid-template-columns: 1fr 1fr
 	grid-template-areas: "title info"
-	place-content: center
 	align-items: start
-	grid-gap: 3em
+	justify-items: center
+	align-content: center
+	justify-content: space-evenly
+	+responsive
+		grid-template-rows: auto auto
+		grid-template-columns: 1fr
+		grid-template-areas: "title" "info"
+		place-items: center
+		place-content: center
 
 .foottitle
-	justify-self: end
 	grid-area: title
 	margin: 0
-	margin-right: 1em
-	padding: 1em
+	padding: .75em
 	border-radius: 1em
-	box-shadow: 0 0 10px #0009
-	// text-decoration: underline
 	transition: all .3s
 	font-size: 4em
 	font-family: "Comfortaa", sans-serif
 	&:hover
-		box-shadow: 0 10px 10px #0005
+		box-shadow: 0 5px 10px #0005
 		transform: translateY(-10px)
+	+responsive
+		padding-left: 1em
+		padding-right: 1em
+		&:hover
+			box-shadow: 0 0 0 #0000
+			transform: none
 
 .footpar
-	// font-size: 2.5em
-	font-size: 2em
-	// width: 20em
-	justify-self: start
+	list-style-type: '→   '
+	align-self: center
+	font-size: 1.75em
 	grid-area: info
-	margin-left: 2em
 	font-family: "Noto Sans", sans-serif
 
 .end2
 	width: 100%
+	border-radius: 50% 50% 0em 0em / 10%
 	height: 100%
 	grid-area: end
 	background-color: #333
+	padding-top: 10vh
 	display: grid
 	place-items: center
 	place-content: center
@@ -188,13 +233,31 @@ hr
 	align-content: end
 
 	.lastslide
-		padding: 5px
+		margin: 10px
+		margin-bottom: 0
+		padding-bottom: 0
 		padding-right: 10px
 
 	.link1
+		position: relative
 		color: #aaa
 		text-decoration: none
 		font-family: "Open sans"
+		transition: all .4s
+		&::before
+			content: ""
+			position: absolute
+			display: block
+			width: 100%
+			height: 1px
+			bottom: 0
+			left: 0
+			background-color: #fff
+			transform: scaleX(0)
+			transition: all .3s
+		&:hover
+			&::before
+				transform: scaleX(1)
 
 // .timeline
 // 	height: 3px
