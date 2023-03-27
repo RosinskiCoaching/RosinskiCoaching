@@ -35,7 +35,7 @@ body
 	place-items: center
 	place-content: center
 	+responsive
-		grid-template-rows: 100vh 130vh 1fr 1fr 110vh
+		grid-template-rows: 100vh 130vh 1fr auto 110vh
 
 .start
 	font-family: "Comfortaa", sans-serif
@@ -64,12 +64,16 @@ body
 	text-shadow: 0 0 15px #000
 	letter-spacing: 7px
 	color: #fff
+	+responsive
+		font-size: 3em
+		text-align: center
 
 hr
 	color: #fff0
 	height: 3px
 	background-color: #ffff00
 	border-radius: 5px
+	width: 80%
 
 .par
 	margin: 0
@@ -78,6 +82,9 @@ hr
 	font-size: 2rem
 	color: #fff
 	text-shadow: 0 0 10px #000
+	+responsive
+		font-size: 1.5em
+		margin: 1em
 
 
 .end
@@ -100,7 +107,7 @@ hr
 	place-content: space-evenly
 	grid-area: closer
 	+responsive
-		grid-template-rows: repeat(4, 1fr)
+		grid-template-rows: repeat(4, auto)
 		grid-template-columns: 1fr
 		grid-template-areas: "one" "two" "three" "four"
 		place-content: center
@@ -154,6 +161,7 @@ hr
 		width: 60%
 		+responsive
 			width: 100%
+			margin-bottom: 1.5em
 
 .footer
 	display: grid
@@ -167,10 +175,12 @@ hr
 	justify-content: space-evenly
 	+responsive
 		grid-template-rows: auto auto
-		grid-template-columns: 1fr
+		grid-template-columns: 100vw
 		grid-template-areas: "title" "info"
 		place-items: center
 		place-content: center
+		margin-top: 10vh
+		margin-bottom: 10vh
 
 .foottitle
 	grid-area: title
@@ -184,8 +194,8 @@ hr
 		box-shadow: 0 5px 10px #0005
 		transform: translateY(-10px)
 	+responsive
-		padding-left: 1em
-		padding-right: 1em
+		padding: 0
+		font-size: 3em
 		&:hover
 			box-shadow: 0 0 0 #0000
 			transform: none
