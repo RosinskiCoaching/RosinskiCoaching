@@ -8,4 +8,4 @@ Finally I should mention that even though CSS-grid is inherently better, that do
 
 ---
 
-USE NEOVIM PEOPLE. ITS JUST A BETTER VIM. COME ON.
+NVIM FOR THE WIN…
