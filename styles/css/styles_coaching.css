@@ -50,7 +50,7 @@ body {
   margin: 0;
   font-size: 4rem;
   letter-spacing: 2px;
-  font-family: "Bitter", sans-serif;
+  font-family: "Comfortaa", sans-serif;
   text-shadow: 0 0 15px #000;
   letter-spacing: 7px;
   color: #fff;
@@ -73,7 +73,7 @@ hr {
 .par {
   margin: 0;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 2rem;
   color: #fff;
   text-shadow: 0 0 10px #000;
@@ -137,10 +137,15 @@ hr {
     text-align: justify;
   }
 }
+@media screen and (max-width: 500px) {
+  .end p {
+    text-align: left;
+  }
+}
 .end h1 {
   text-align: center;
   font-size: 3em;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Comfortaa", sans-serif;
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
   color: #fff;
 }
@@ -243,7 +248,7 @@ hr {
   align-self: center;
   font-size: 1.75em;
   grid-area: info;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .end2 {
